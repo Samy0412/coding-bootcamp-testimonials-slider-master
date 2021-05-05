@@ -15,21 +15,32 @@ body {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: 0% 100%;
+  @media screen and (min-width: 1040px) {
+    background-size: 42%;
+    background-position: 0% 100%;
+  }
 }
 
 main {
   padding: 0.7rem;
   display: flex;
   flex-direction: row;
-
+  height: 100vh;
+  @media screen and (min-width: 1040px) {
+    padding: 1.5rem 2.2rem 2.8rem 2rem;
+  }
   .slide {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // border: solid 1px green;
+    @media screen and (min-width: 1040px) {
+      flex-direction: row-reverse;
+      width: 100%;
+    }
 
     .slide__picture {
-      // border: 2px solid red;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,11 +48,21 @@ main {
       width: 100%;
       height: 46.8vh;
       background: url("../images/pattern-bg.svg");
-      background-size: 100%;
+      background-size: 100% 100%;
+      @media screen and (min-width: 1040px) {
+        height: 100%;
+        background-repeat: no-repeat;
+        max-width: 22rem;
+        // border: solid 1px red;
+      }
       .picture {
-        width: 38.3vh;
+        width: 38.4vh;
         border-radius: 5px;
         box-shadow: 0px 21px 50px -21px$Dark-Blue;
+        @media screen and (min-width: 1040px) {
+          width: 67.5vh;
+          transform: translate(-0.4rem, 0.14rem);
+        }
       }
       .buttons {
         position: absolute;
@@ -51,12 +72,26 @@ main {
         border-radius: 10rem;
         background-color: white;
         text-align: center;
+        @media screen and (min-width: 1040px) {
+          width: 3.5rem;
+          height: 56px;
+          bottom: 2vw;
+          right: 14.3rem;
+          padding: 8px 10px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
         img {
           height: 40px;
           padding: 13px;
           cursor: pointer;
-          &:hover {
+          @media screen and (min-width: 1040px) {
             padding: 11px;
+            stroke-width: 4px;
+          }
+          &:hover {
+            padding: 9px;
           }
         }
       }
@@ -73,6 +108,19 @@ main {
       background-position-x: 50%;
       margin-top: 0.85rem;
       font-family: "Inter", sans-serif;
+      // border: 1px solid blue;
+      @media screen and (min-width: 1040px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 45vh;
+        width: 20rem;
+        margin-left: 3.1rem;
+        margin-right: -4rem;
+        z-index: 10;
+        background-position-x: 19%;
+        background-size: 19%;
+      }
+
       p {
         margin-top: 0.7rem;
         font-size: 0.57rem;
@@ -80,70 +128,60 @@ main {
         text-align: center;
         color: $Dark-Blue;
         line-height: 0.75rem;
+        @media screen and (min-width: 1040px) {
+          font-size: 1rem;
+          line-height: 1.4rem;
+          text-align: left;
+          padding-top: 1.3rem;
+          word-spacing: 0.03rem;
+        }
       }
       .student {
         text-align: center;
+        @media screen and (min-width: 1020px) {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          justify-content: space-between;
+          min-width: 7.9rem;
+          margin-top: 0.6rem;
+        }
         h5 {
           font-size: 0.45rem;
           font-weight: 700;
           color: $Dark-Blue;
           margin-top: 0.55rem;
+          @media screen and (min-width: 1020px) {
+            font-size: 0.6rem;
+            margin-right: 0.3rem;
+          }
         }
         p {
           color: $Grayish-Blue;
           font-weight: 300;
           font-size: 0.45rem;
           margin-top: 0;
+          @media screen and (min-width: 1020px) {
+            font-size: 0.6rem;
+            padding-top: 0;
+          }
         }
       }
     }
   }
 
   .active {
+    display: flex;
   }
-  .slideOutLeft {
-    animation: animateOutLeft 1s;
+  .fade {
+    animation: fadeIn 2s;
   }
-  .slideOutRight {
-    animation: animateOutRight 1s;
-  }
-  .slideInRight {
-    animation: animateInRight 1s;
-  }
-  .slideInLeft {
-    animation: animateInLeft 1s;
-  }
-  @keyframes animateInRight {
+  @keyframes fadeIn {
     0% {
-      transform: translateX(100%);
+      opacity: 0;
     }
     100% {
-      transform: translateX(0%);
-    }
-  }
-  @keyframes animateInLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  @keyframes animateOutLeft {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  @keyframes animateOutRight {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(100%);
+      opacity: 1;
     }
   }
 }
