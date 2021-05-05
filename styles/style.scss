@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+$Dark-Blue: hsl(240, 38%, 20%);
+$Grayish-Blue: hsl(240, 18%, 77%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 32px;
+}
+body {
+  min-height: 100vh;
+  background: url("../images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 0% 100%;
+}
+
+main {
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: row;
+
+  .slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .slide__picture {
+      // border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 46.8vh;
+      background: url("../images/pattern-bg.svg");
+      background-size: 100%;
+      .picture {
+        width: 38.3vh;
+        border-radius: 5px;
+        box-shadow: 0px 21px 50px -21px$Dark-Blue;
+      }
+      .buttons {
+        position: absolute;
+        bottom: 12px;
+        width: 2.5rem;
+        height: 40px;
+        border-radius: 10rem;
+        background-color: white;
+        text-align: center;
+        img {
+          height: 40px;
+          padding: 13px;
+          cursor: pointer;
+          &:hover {
+            padding: 11px;
+          }
+        }
+      }
+    }
+    .slide__testimonial {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 95%;
+      background: url("../images/pattern-quotes.svg");
+      background-repeat: no-repeat;
+      background-size: 18%;
+      background-position-x: 50%;
+      margin-top: 0.85rem;
+      font-family: "Inter", sans-serif;
+      p {
+        margin-top: 0.7rem;
+        font-size: 0.57rem;
+        font-weight: 200;
+        text-align: center;
+        color: $Dark-Blue;
+        line-height: 0.75rem;
+      }
+      .student {
+        text-align: center;
+        h5 {
+          font-size: 0.45rem;
+          font-weight: 700;
+          color: $Dark-Blue;
+          margin-top: 0.55rem;
+        }
+        p {
+          color: $Grayish-Blue;
+          font-weight: 300;
+          font-size: 0.45rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .active {
+  }
+  .slideOutLeft {
+    animation: animateOutLeft 1s;
+  }
+  .slideOutRight {
+    animation: animateOutRight 1s;
+  }
+  .slideInRight {
+    animation: animateInRight 1s;
+  }
+  .slideInLeft {
+    animation: animateInLeft 1s;
+  }
+  @keyframes animateInRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes animateInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes animateOutLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes animateOutRight {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

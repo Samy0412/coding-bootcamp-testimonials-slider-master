@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 32px;
+}
+
+body {
+  min-height: 100vh;
+  background: url("../images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 0% 100%;
+}
+
+main {
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: row;
+}
+main .slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .slide .slide__picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 46.8vh;
+  background: url("../images/pattern-bg.svg");
+  background-size: 100%;
+}
+main .slide .slide__picture .picture {
+  width: 38.3vh;
+  border-radius: 5px;
+  box-shadow: 0px 21px 50px -21px #202046;
+}
+main .slide .slide__picture .buttons {
+  position: absolute;
+  bottom: 12px;
+  width: 2.5rem;
+  height: 40px;
+  border-radius: 10rem;
+  background-color: white;
+  text-align: center;
+}
+main .slide .slide__picture .buttons img {
+  height: 40px;
+  padding: 13px;
+  cursor: pointer;
+}
+main .slide .slide__picture .buttons img:hover {
+  padding: 11px;
+}
+main .slide .slide__testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  background: url("../images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-size: 18%;
+  background-position-x: 50%;
+  margin-top: 0.85rem;
+  font-family: "Inter", sans-serif;
+}
+main .slide .slide__testimonial p {
+  margin-top: 0.7rem;
+  font-size: 0.57rem;
+  font-weight: 200;
+  text-align: center;
+  color: #202046;
+  line-height: 0.75rem;
+}
+main .slide .slide__testimonial .student {
+  text-align: center;
+}
+main .slide .slide__testimonial .student h5 {
+  font-size: 0.45rem;
+  font-weight: 700;
+  color: #202046;
+  margin-top: 0.55rem;
+}
+main .slide .slide__testimonial .student p {
+  color: #babacf;
+  font-weight: 300;
+  font-size: 0.45rem;
+  margin-top: 0;
+}
+main .slideOutLeft {
+  -webkit-animation: animateOutLeft 1s;
+          animation: animateOutLeft 1s;
+}
+main .slideOutRight {
+  -webkit-animation: animateOutRight 1s;
+          animation: animateOutRight 1s;
+}
+main .slideInRight {
+  -webkit-animation: animateInRight 1s;
+          animation: animateInRight 1s;
+}
+main .slideInLeft {
+  -webkit-animation: animateInLeft 1s;
+          animation: animateInLeft 1s;
+}
+@-webkit-keyframes animateInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes animateInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes animateInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes animateInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes animateOutLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animateOutLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes animateOutRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes animateOutRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}/*# sourceMappingURL=style.css.map */
