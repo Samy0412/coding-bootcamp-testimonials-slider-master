@@ -35,10 +35,30 @@ main .slide .slide__picture {
   background: url("../images/pattern-bg.svg");
   background-size: 100%;
 }
-main .slide .slide__picture .picture {
+main .slide .slide__picture #picture {
   width: 38.3vh;
   border-radius: 5px;
   box-shadow: 0px 21px 50px -21px #202046;
+}
+main .slide .slide__picture #picture.fade {
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 main .slide .slide__picture .buttons {
   position: absolute;
@@ -93,14 +113,6 @@ main .slide .slide__testimonial .student p {
   font-size: 0.45rem;
   margin-top: 0;
 }
-main .slideOutLeft {
-  -webkit-animation: animateOutLeft 1s;
-          animation: animateOutLeft 1s;
-}
-main .slideOutRight {
-  -webkit-animation: animateOutRight 1s;
-          animation: animateOutRight 1s;
-}
 main .slideInRight {
   -webkit-animation: animateInRight 1s;
           animation: animateInRight 1s;
@@ -139,37 +151,5 @@ main .slideInLeft {
   }
   100% {
     transform: translateX(0%);
-  }
-}
-@-webkit-keyframes animateOutLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes animateOutLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@-webkit-keyframes animateOutRight {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-@keyframes animateOutRight {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }/*# sourceMappingURL=style.css.map */

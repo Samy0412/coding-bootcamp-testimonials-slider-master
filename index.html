@@ -13,15 +13,15 @@
 <body>
 
   <main id="slider">
-    <div class="slide active">
+    <div class="slide">
       <section class="slide__picture">
-        <img class="picture" src="./images/image-tanya.jpg" alt="Tanya">
+        <img id="picture" src="./images/image-tanya.jpg" alt="Tanya">
         <div class="buttons">
-          <img onclick="prev()" src="./images/icon-prev.svg" alt="prev">
+          <img class="active" onclick="prev()" src="./images/icon-prev.svg" alt="prev">
           <img onclick="next()"src="./images/icon-next.svg" alt="next">
         </div>
       </section>
-      <section class="slide__testimonial">
+      <section class="slide__testimonial ">
         <p>“ I’ve been interested in coding for a while but never taken the jump, until now. 
           I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
           excited about the future. ”</p>
@@ -31,25 +31,6 @@
         </div>
       </section>
     </div>
-    <div class="slide ">
-      <div class="slide__picture">
-        <img class="picture" src="./images/image-john.jpg" alt="John">
-        <div class="buttons">
-          <img onclick="prev()" src="./images/icon-prev.svg" alt="prev">
-          <img onclick="next()" src="./images/icon-next.svg" alt="next">
-        </div>
-      </div>
-      <div class="slide__testimonial">
-        <p> “ If you want to lay the best foundation possible I’d recommend taking this course. 
-          The depth the instructors go into is incredible. I now feel so confident about 
-          starting up as a professional developer. ”</p>
-        <div class="student">
-          <h5>John Tarkpor</h5>
-          <p>Junior Front-end Developer</p>
-        </div>
-      </div>
-    </div>
-  
   </main>
 </body>
 </html>

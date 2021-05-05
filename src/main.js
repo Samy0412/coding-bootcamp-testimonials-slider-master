@@ -1,40 +1,49 @@
 //Define the array of slides
-const allSlides = [...document.querySelectorAll(".slide")];
+const allStudents = [
+  {
+    name: "Tanya Sinclair",
+    title: "UX Engineer",
+    testimonial:
+      "“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”",
+    picture: "./images/image-tanya.jpg",
+  },
+  {
+    name: "John Tarkpor",
+    title: "Junior Front-End Developer",
+    testimonial:
+      "“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”",
+    picture: "./images/image-john.jpg",
+  },
+];
 
 //initialize variables
-let newActiveSlide = null;
-let activeSlide = null;
-let newActivePicture = null;
-let newActiveTestimonial = null;
+let newActiveStudent = null;
+let activeStudent = allStudents[0];
+
+const picture = document.getElementById("picture");
+const testimonial = document.querySelector(".slide__testimonial p");
+const studentName = document.querySelector(".student h5");
+const studentTitle = document.querySelector(".student p");
 
 const changeSlide = (forward) => {
-  activeSlide = document.querySelector(".active");
-  activePicture = activeSlide.querySelector(".picture");
-  activeTestimonial = activeSlide.querySelector(".slide__testimonial");
-  const activeSlideIndex = allSlides.indexOf(activeSlide);
+  // console.log(activeStudent);
+  picture.classList.remove("fade");
+  const activeStudentIndex = allStudents.indexOf(activeStudent);
   if (forward) {
-    newActiveSlide = allSlides[(activeSlideIndex + 1) % allSlides.length];
+    newActiveStudent =
+      allStudents[(activeStudentIndex + 1) % allStudents.length];
   } else {
-    newActiveSlide =
-      allSlides[(activeSlideIndex - 1 + allSlides.length) % allSlides.length];
+    newActiveStudent =
+      allStudents[
+        (activeStudentIndex - 1 + allStudents.length) % allStudents.length
+      ];
   }
-  //get the elements we want to animate
-  newActivePicture = newActiveSlide.querySelector(".picture");
-  newActiveTestimonial = newActiveSlide.querySelector(".slide__testimonial");
-
-  //remove the former classes added
-  activeSlide.classList.remove("active");
-  activePicture.classList.remove("slideInRight", "slideInLeft");
-  activeTestimonial.classList.remove("slideInRight", "slideInLeft");
-  newActivePicture.classList.remove("slideOutRight", "slideOutLeft");
-  newActiveTestimonial.classList.remove("slideOutRight", "slideOutLeft");
-
-  //add the active class and animation to the elements of the newActive slide
-  newActiveSlide.classList.add("active");
-  activePicture.classList.add(forward ? "slideOutLeft" : "slideOutRight");
-  activeTestimonial.classList.add(forward ? "slideOutLeft" : "slideOutRight");
-  newActivePicture.classList.add(forward ? "slideInRight" : "slideInLeft");
-  newActiveTestimonial.classList.add(forward ? "slideInRight" : "slideInLeft");
+  activeStudent = newActiveStudent;
+  picture.classList.add("fade");
+  picture.src = activeStudent.picture;
+  testimonial.innerHTML = activeStudent.testimonial;
+  studentName.innerHTML = activeStudent.name;
+  studentTitle.innerHTML = activeStudent.title;
 };
 
 const prev = () => {
