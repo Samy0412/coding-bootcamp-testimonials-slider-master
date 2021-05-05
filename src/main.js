@@ -37,3 +37,14 @@ const prev = () => {
 const next = () => {
   changeSlide(true);
 };
+
+//get the buttons
+
+document.addEventListener("keydown", (event) => {
+  if (event.keyCode === 39) {
+    changeSlide(true);
+  }
+  if (event.keyCode === 37) {
+    changeSlide(false);
+  }
+});
